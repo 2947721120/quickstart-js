@@ -1,3 +1,48 @@
+##CN
+火力地堡验证快速入门
+=============================
+
+在火力地堡AUTH快速入门演示签署的几种方法。
+
+在火力地堡电子邮件/密码，快速入门演示如何使用火力地堡存储的电子邮件和密码 - 你既可以创建并在用户登录。
+
+在火力地堡谷歌登录快速入门演示了使用谷歌帐户进行身份验证使用三种不同的技术来火力点：带有弹出，重定向和身份验证令牌。
+
+在火力地堡的Facebook登录快速入门演示使用Facebook帐户进行身份验证使用三种不同的技术来火力点：带有弹出，重定向和身份验证令牌。
+
+在火力地堡GitHub的登录快速入门演示使用GitHub的帐户进行身份验证使用两种不同的技术来火力：有一个弹出式和重定向。
+
+在火力地堡Twitter的登录快速入门演示使用一个Twitter帐户进行身份验证使用两种不同的技术来火力：有一个弹出式和重定向。
+
+在火力地堡匿名身份验证快速入门演示验证匿名火力地堡。
+
+在火力地堡定制的身份验证的Web快速入门演示了如何可以验证与谁一直从自己现有的预认证系统认证的用户火力地堡。这是通过在一个特定的格式，其使用从由谷歌开发者控制台下载服务帐户的私钥签署生成令牌完成。然后，这个标记可以传递给该用户使用它来验证火力地堡客户端应用程序。
+
+介绍
+------------
+
+- [Read more about Firebase Auth](https://firebase.google.com/docs/auth/)
+
+入门
+---------------
+
+- 设置你的计划 [Firebase Console](https://console.firebase.google.com).
+- 启用要在验证部分>登录方法选项卡中使用的身份验证方法 - 你不需要启用自定义身份验证。
+-在里面 [Google Developer Console](https://console.developers.google.com), 访问您在火力地堡控制台创建的项目。
+- 对于自定义验证，也是在你的项目创建一个新的服务帐户 [Developers Console](https://console.developers.google.com/apis/credentials/serviceaccountkey?project=_), 并下载JSON表示。
+- 对于Facebook，Twitter和GitHub上，您将需要在他们的开发者平台，白名单创建一个应用程序作为一个开发者 `https://<project_id>.firebaseapp.com/__/auth/handler`面向auth重定向和在火力地堡控制台启用和设置应用程序的凭据>验证>在方法的迹象。
+- 编辑 `.html`为验证方法你想尝试，并从火力地堡复制的初始化代码段 Console **Overview > Add Firebase to your web app** into the `<head>`第 `.html`.
+- 运行 `firebase serve`使用火力地堡CLI工具来启动一个本地服务器，并打开在网络浏览器的样品`.html`
+支持
+-------
+
+https://firebase.google.com/support/
+
+License
+-------
+
+© Google, 2016. Licensed under an [Apache-2](../LICENSE) license.
+##EN
 Firebase Auth Quickstart
 =============================
 
