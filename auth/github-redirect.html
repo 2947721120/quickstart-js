@@ -22,7 +22,7 @@ limitations under the License.
 
   <!-- Material Design Theming -->
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://font.c2cmalls.com/icon?family=Material+Icons">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
 
   <link rel="stylesheet" href="main.css">
@@ -31,7 +31,18 @@ limitations under the License.
   <!-- ***********************************************************************************************************************
        * TODO(DEVELOPER): Paste the initialization snippet from: Firebase Console > Overview > Add Firebase to your web app. *
        *********************************************************************************************************************** -->
-
+<script src="https://cdn.c2cbc.com/firebase/3.0.4/firebase.js"></script>
+<script>
+  //初始化火力点
+  var config = {
+    apiKey: "AIzaSyCKRqijfcHOUKQnXBC2AP_A1PnI6R1xdrQ",
+    authDomain: "angular-cn.firebaseapp.com",
+    databaseURL: "https://angular-cn.firebaseio.com",
+    storageBucket: "angular-cn.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    
   <script type="text/javascript">
 
     /**
