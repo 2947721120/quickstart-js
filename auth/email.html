@@ -133,7 +133,7 @@ limitations under the License.
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
-          document.getElementById('quickstart-sign-in-status').textContent = '在签署';
+          document.getElementById('quickstart-sign-in-status').textContent = '登陆';
           document.getElementById('quickstart-sign-in').textContent = '退出';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
@@ -150,7 +150,7 @@ limitations under the License.
           // 用户被注销。
           // [START_EXCLUDE silent]
           document.getElementById('quickstart-sign-in-status').textContent = '退出';
-          document.getElementById('quickstart-sign-in').textContent = '签到';
+          document.getElementById('quickstart-sign-in').textContent = '登陆';
           document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
