@@ -18,12 +18,13 @@ limitations under the License.
 <head>
   <meta charset=utf-8 />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>GitHub Sign In Example</title>
+  <title>GitHub的登录示例</title>
 
   <!-- Material Design Theming -->
+  <link rel="stylesheet" href="https://cdn.c2cbc.com/material-design-lite/1.1.3/material.min.css">
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+  <link rel="stylesheet" href="https://font.c2cmalls.com/icon?family=Material+Icons">
+  <script defer src="https://cdn.c2cbc.com/material-design-lite/1.1.3/material.min.js"></script>
 
   <link rel="stylesheet" href="main.css">
 
@@ -31,10 +32,10 @@ limitations under the License.
   <!-- ***********************************************************************************************************************
      * TODO（开发者）：从粘贴初始化代码片段：火力地堡控制台>概述>添加火力地堡到您的Web应用程序。 *
        *********************************************************************************************************************** -->
-
-<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="https://cdn.c2cbc.com/firebase/3.0.4/firebase.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>-->
 <script>
-  // Initialize Firebase
+  //初始化火力点
   var config = {
     apiKey: "AIzaSyCKRqijfcHOUKQnXBC2AP_A1PnI6R1xdrQ",
     authDomain: "angular-cn.firebaseapp.com",
@@ -47,12 +48,12 @@ limitations under the License.
   <script type="text/javascript">
 
     /**
-     * Function called when clicking the Login/Logout button.
+     *函数调用点击登录/注销按钮时。
      */
     // [START buttoncallback]
     function toggleSignIn() {
       if (!firebase.auth().currentUser) {
-        // [START createprovider]
+        //createprovider / [开始]
         var provider = new firebase.auth.GithubAuthProvider();
         // [END createprovider]
         // [START addscopes]
@@ -60,26 +61,26 @@ limitations under the License.
         // [END addscopes]
         // [START signin]
         firebase.auth().signInWithPopup(provider).then(function(result) {
-          // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+          // 这给你一个GitHub的访问令牌。你可以用它来访问GitHub的API。
           var token = result.credential.accessToken;
-          // The signed-in user info.
+          //在登录的用户信息。
           var user = result.user;
           // [START_EXCLUDE]
           document.getElementById('quickstart-oauthtoken').textContent = token;
           // [END_EXCLUDE]
         }).catch(function(error) {
-          // Handle Errors here.
+          //这里处理错误。
           var errorCode = error.code;
           var errorMessage = error.message;
-          // The email of the user's account used.
+          // 该用户的帐户的电子邮件使用。
           var email = error.email;
-          // The firebase.auth.AuthCredential type that was used.
+          // 已使用的firebase.auth.AuthCredential类型。
           var credential = error.credential;
           // [START_EXCLUDE]
           if (errorCode === 'auth/account-exists-with-different-credential') {
             alert('You have already signed up with a different auth provider for that email.');
-            // If you are using multiple auth providers on your app you should handle linking
-            // the user's accounts here.
+          //如果您正在使用您的应用程序的多个身份验证提供者，你应该处理链接
+            //这里的用户帐户。
           } else {
             console.error(error);
           }
@@ -112,8 +113,8 @@ limitations under the License.
      *当登录后，我们也验证到火力地堡实时数据库。
      */
     function initApp() {
-      // Listening for auth state changes.
-      // [START authstatelistener]
+   //监听AUTH状态变化。
+      //[START authstatelistener]
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           // User is signed in.
@@ -140,7 +141,7 @@ limitations under the License.
           }, null, '  ');
           // [END_EXCLUDE]
         } else {
-          // User is signed out.
+          // 用户被注销。
           // [START_EXCLUDE]
           document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
           document.getElementById('quickstart-sign-in').textContent = 'Sign in with GitHub';
@@ -165,11 +166,11 @@ limitations under the License.
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-  <!-- Header section containing title -->
+  <!--含标题标题节 -->
   <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
-        <a href="/"><h3>Firebase Authentication</h3></a>
+        <a href="/"><h3>火力地堡认证</h3></a>
       </div>
     </div>
   </header>
@@ -180,20 +181,20 @@ limitations under the License.
       <!-- Container for the demo -->
       <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
         <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
-          <h2 class="mdl-card__title-text">GitHub Authentication with Popup</h2>
+          <h2 class="mdl-card__title-text">GitHub的身份验证使用Popup</h2>
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-          <p>Sign in with your GitHub account below.</p>
+          <p>请用您的以下帐户GitHub的.</p>
 
-          <!-- Button that handles sign-in/sign-out -->
+          <!--按键处理登录/注销-->
           <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">Sign in with GitHub</button>
 
-          <!-- Container where we'll display the user details -->
+          <!-- 集装箱在这里，我们将显示用户的详细信息 -->
           <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <div>Firebase auth <code>currentUser</code> object value:</div>
+            <div>火力地堡AUTH <code>currentUser</code> object value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
-            <div>GitHub OAuth Access Token:</div>
+            <div>GitHub的OAuth访问令牌:</div>
             <pre><code id="quickstart-oauthtoken">null</code></pre>
           </div>
         </div>
