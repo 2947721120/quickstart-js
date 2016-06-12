@@ -33,7 +33,7 @@ limitations under the License.
      * TODO（开发者）：从粘贴初始化代码片段：火力地堡控制台>概述>添加火力地堡到您的Web应用程序。 *
        *********************************************************************************************************************** -->
 <script src="https://cdn.c2cbc.com/firebase/3.0.4/firebase.js"></script>
-<!--<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>-->
+
 <script>
   //初始化火力点
   var config = {
@@ -59,7 +59,7 @@ limitations under the License.
         // [START addscopes]
         provider.addScope('repo');
         // [END addscopes]
-        // [START signin]
+        // [START登陆]
         firebase.auth().signInWithPopup(provider).then(function(result) {
           // 这给你一个GitHub的访问令牌。你可以用它来访问GitHub的API。
           var token = result.credential.accessToken;
@@ -78,7 +78,7 @@ limitations under the License.
           var credential = error.credential;
           // [START_EXCLUDE]
           if (errorCode === 'auth/account-exists-with-different-credential') {
-            alert('You have already signed up with a different auth provider for that email.');
+            alert('你已经签署了与电子邮件不同认证供应商.');
           //如果您正在使用您的应用程序的多个身份验证提供者，你应该处理链接
             //这里的用户帐户。
           } else {
@@ -114,10 +114,10 @@ limitations under the License.
      */
     function initApp() {
    //监听AUTH状态变化。
-      //[START authstatelistener]
+      //[START 自动状态侦听]
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          // User is signed in.
+          //用户在登陆。
           var displayName = user.displayName;
           var email = user.email;
           var emailVerified = user.emailVerified;
@@ -153,7 +153,7 @@ limitations under the License.
         document.getElementById('quickstart-sign-in').disabled = false;
         // [END_EXCLUDE]
       });
-      // [END authstatelistener]
+      // [结束 自动状态侦听]
 
       document.getElementById('quickstart-sign-in').addEventListener('click', toggleSignIn, false);
     }
@@ -181,13 +181,13 @@ limitations under the License.
       <!-- Container for the demo -->
       <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
         <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
-          <h2 class="mdl-card__title-text">GitHub的身份验证使用Popup</h2>
+          <h2 class="mdl-card__title-text">GitHub的身份验证使用弹窗</h2>
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
           <p>请用您的以下帐户GitHub的.</p>
 
           <!--按键处理登录/注销-->
-          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">Sign in with GitHub</button>
+          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in">登录在GitHub</button>
 
           <!-- 集装箱在这里，我们将显示用户的详细信息 -->
           <div class="quickstart-user-details-container">
