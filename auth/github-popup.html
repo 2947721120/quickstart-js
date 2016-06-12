@@ -29,9 +29,21 @@ limitations under the License.
 
   <!-- Firebase -->
   <!-- ***********************************************************************************************************************
-       * TODO(DEVELOPER): Paste the initialization snippet from: Firebase Console > Overview > Add Firebase to your web app. *
+     * TODO（开发者）：从粘贴初始化代码片段：火力地堡控制台>概述>添加火力地堡到您的Web应用程序。 *
        *********************************************************************************************************************** -->
 
+<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCKRqijfcHOUKQnXBC2AP_A1PnI6R1xdrQ",
+    authDomain: "angular-cn.firebaseapp.com",
+    databaseURL: "https://angular-cn.firebaseio.com",
+    storageBucket: "angular-cn.appspot.com",
+  };
+  firebase.initializeApp(config);
+</script>
+    
   <script type="text/javascript">
 
     /**
@@ -86,18 +98,18 @@ limitations under the License.
     // [END buttoncallback]
 
     /**
-     * initApp handles setting up the Firebase context and registering
-     * callbacks for the auth status.
-     *
-     * The core initialization is in firebase.App - this is the glue class
-     * which stores configuration. We provide an app name here to allow
-     * distinguishing multiple app instances.
-     *
-     * This method also registers a listener with firebase.auth().onAuthStateChanged.
-     * This listener is called when the user is signed in or out, and that
-     * is where we update the UI.
-     *
-     * When signed in, we also authenticate to the Firebase Realtime Database.
+ * initApp处理建立火力地堡上下文和注册
+     *为AUTH状态回调。
+     *
+     *核心初始化是在firebase.App - 这是胶类
+     *存储配置。我们在这里提供一个应用程序的名称，以便
+     *区分多个应用程序实例。
+     *
+     *这个方法也注册与firebase.auth（）的监听器。onAuthStateChanged。
+     *当用户或缩小签署该监听器被调用，而
+     *是我们更新UI。
+     *
+     *当登录后，我们也验证到火力地堡实时数据库。
      */
     function initApp() {
       // Listening for auth state changes.
