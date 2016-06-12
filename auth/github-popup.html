@@ -127,8 +127,8 @@ limitations under the License.
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('quickstart-sign-in-status').textContent = '登陆';
+          document.getElementById('quickstart-sign-in').textContent = '退出';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -143,8 +143,8 @@ limitations under the License.
         } else {
           // 用户被注销。
           // [START_EXCLUDE]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in with GitHub';
+          document.getElementById('quickstart-sign-in-status').textContent = '退出';
+          document.getElementById('quickstart-sign-in').textContent = '登录GitHub';
           document.getElementById('quickstart-account-details').textContent = 'null';
           document.getElementById('quickstart-oauthtoken').textContent = 'null';
           // [END_EXCLUDE]
@@ -192,7 +192,7 @@ limitations under the License.
           <!-- 集装箱在这里，我们将显示用户的详细信息 -->
           <div class="quickstart-user-details-container">
             Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <div>火力地堡AUTH <code>currentUser</code> object value:</div>
+            <div>火力地堡AUTH <code>currentUser</code> 对象值value:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
             <div>GitHub的OAuth访问令牌:</div>
             <pre><code id="quickstart-oauthtoken">null</code></pre>
