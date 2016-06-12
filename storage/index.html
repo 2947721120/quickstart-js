@@ -39,7 +39,7 @@ limitations under the License.
        复制会出现在此评论的片段。
        *************************************************************************** -->
 
-<script src="https://www.gstatic.com/firebasejs/live/3.0/firebase.js"></script>
+<script src="https://cdn.c2cbc.com/firebase/3.0.4/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
@@ -59,7 +59,7 @@ limitations under the License.
     <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
       <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
         <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
-          <h3>Storage Quickstart</h3>
+          <h3>存储快速入门</h3>
         </div>
       </div>
     </header>
@@ -70,13 +70,13 @@ limitations under the License.
         <!-- Container for the demo -->
         <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
           <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
-            <h2 class="mdl-card__title-text">Upload a file</h2>
+            <h2 class="mdl-card__title-text">上传一个文件</h2>
           </div>
           <div class="mdl-card__supporting-text mdl-color-text--grey-600" id="messagesDiv">
-            <p>Select a file below. When it is uploaded, a link will be displayed to the uploaded file.</p>
+            <p>选择下面的文件。当它被上传时，一个链接会显示给上传的文件.</p>
             <h6>Choose File</h6>
             <input type="file" id="file" name="file"/>
-            <h6>File URL:</h6>
+            <h6>文件的URL:</h6>
             <span id="linkbox"></span>
           </div>
         </div>
@@ -96,10 +96,10 @@ limitations under the License.
         'contentType': file.type
       };
 
-      // Push to child path.
+      // 推到子路径。
       var uploadTask = storageRef.child('images').put(file, metadata);
 
-      // Listen for errors and completion of the upload.
+      // 听着错误和上传完成。
       // [START oncomplete]
       uploadTask.on('state_changed', null, function(error) {
         // [START onfailure]
@@ -121,12 +121,12 @@ limitations under the License.
       document.getElementById('file').addEventListener('change', handleFileSelect, false);
       document.getElementById('file').disabled = true;
 
-      // Sign the user in anonymously since accessing Storage requires the user to be authorized.
+      // 登录匿名用户访问以来的存储需要被授权用户。
       auth.signInAnonymously().then(function(user) {
-        console.log('Anonymous Sign In Success', user);
+        console.log('匿名登录成功', user);
         document.getElementById('file').disabled = false;
       }).catch(function(error) {
-        console.error('Anonymous Sign In Error', error);
+        console.error('匿名登录错误', error);
       });
     }
   </script>
