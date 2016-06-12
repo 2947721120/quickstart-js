@@ -45,7 +45,7 @@ limitations under the License.
   <script type="text/javascript">
 
     /**
-     * Handles the sign in button press.
+     *在手柄按钮按下的标志。
      */
     function toggleSignIn() {
       if (firebase.auth().currentUser) {
@@ -63,10 +63,10 @@ limitations under the License.
           alert('Please enter a password.');
           return;
         }
-        // Sign in with email and pass.
+        //登录电子邮件和传球。
         // [START authwithemail]
         firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
-          // Handle Errors here.
+          // 这里处理错误。
           var errorCode = error.code;
           var errorMessage = error.message;
           // [START_EXCLUDE]
@@ -93,10 +93,10 @@ limitations under the License.
         alert('Please enter a password.');
         return;
       }
-      // Sign in with email and pass.
+      //登录电子邮件和传球。
       // [START createwithemail]
       firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
+        //这里处理错误。
         var errorCode = error.code;
         var errorMessage = error.message;
         // [START_EXCLUDE]
@@ -111,19 +111,19 @@ limitations under the License.
     }
 
     /**
-     * Handles registering callbacks for the auth status.
+     * 处理注册回调的权威性地位.
      *
-     * This method registers a listener with firebase.auth().onAuthStateChanged. This listener is called when
-     * the user is signed in or out, and that is where we update the UI.
+    *此方法注册与firebase.auth（）的监听器。onAuthStateChanged。该监听器被调用时，
+     *用户或缩小签约，而这正是我们更新UI。
      *
-     * When signed in, we also authenticate to the Firebase Realtime Database.
+     * 登录后，我们也验证到火力地堡实时数据库。
      */
     function initApp() {
-      // Listening for auth state changes.
-      // [START authstatelistener]
+ //监听自动状态变化。
+ //[启动自动状态侦听]
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          // User is signed in.
+          // 用户在签署。
           var displayName = user.displayName;
           var email = user.email;
           var emailVerified = user.emailVerified;
@@ -133,8 +133,8 @@ limitations under the License.
           var refreshToken = user.refreshToken;
           var providerData = user.providerData;
           // [START_EXCLUDE silent]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed in';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign out';
+          document.getElementById('quickstart-sign-in-status').textContent = '在签署';
+          document.getElementById('quickstart-sign-in').textContent = '退出';
           document.getElementById('quickstart-account-details').textContent = JSON.stringify({
             displayName: displayName,
             email: email,
@@ -147,10 +147,10 @@ limitations under the License.
           }, null, '  ');
           // [END_EXCLUDE]
         } else {
-          // User is signed out.
+          // 用户被注销。
           // [START_EXCLUDE silent]
-          document.getElementById('quickstart-sign-in-status').textContent = 'Signed out';
-          document.getElementById('quickstart-sign-in').textContent = 'Sign in';
+          document.getElementById('quickstart-sign-in-status').textContent = '退出';
+          document.getElementById('quickstart-sign-in').textContent = '签到';
           document.getElementById('quickstart-account-details').textContent = 'null';
           // [END_EXCLUDE]
         }
@@ -172,11 +172,11 @@ limitations under the License.
 <body>
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
-  <!-- Header section containing title -->
+  <!-- 含标题标题节 -->
   <header class="mdl-layout__header mdl-color-text--white mdl-color--light-blue-700">
     <div class="mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-grid">
       <div class="mdl-layout__header-row mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--8-col-desktop">
-        <a href="/"><h3>Firebase Authentication</h3></a>
+        <a href="/"><h3>火力地堡认证</h3></a>
       </div>
     </div>
   </header>
@@ -187,23 +187,23 @@ limitations under the License.
       <!-- Container for the demo -->
       <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--12-col-tablet mdl-cell--12-col-desktop">
         <div class="mdl-card__title mdl-color--light-blue-600 mdl-color-text--white">
-          <h2 class="mdl-card__title-text">Firebase Email &amp; Password Authentication</h2>
+          <h2 class="mdl-card__title-text">火力地堡电子邮件 &amp; 密码验证</h2>
         </div>
         <div class="mdl-card__supporting-text mdl-color-text--grey-600">
-          <p>Enter an email and password below and either sign in to an existing account or sign up</p>
+          <p>请在下方输入电子邮件地址和密码，并且登录到现有的帐户或注册</p>
 
-          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="Email"/>
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" id="email" name="email" placeholder="电子邮箱"/>
           &nbsp;&nbsp;&nbsp;
-          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="Password"/>
+          <input class="mdl-textfield__input" style="display:inline;width:auto;" type="password" id="password" name="password" placeholder="密码"/>
           <br/><br/>
-          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">Sign In</button>
+          <button disabled class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-in" name="signin">签到</button>
           &nbsp;&nbsp;&nbsp;
-          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">Sign Up</button>
+          <button class="mdl-button mdl-js-button mdl-button--raised" id="quickstart-sign-up" name="signup">注册</button>
 
           <!-- Container where we'll display the user details -->
           <div class="quickstart-user-details-container">
-            Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
-            <div>Firebase auth <code>currentUser</code> object value:</div>
+            火力地堡登录状态： <span id="quickstart-sign-in-status">Unknown</span>
+            <div>火力地堡AUTH <code>currentUser</code> 对象值:</div>
             <pre><code id="quickstart-account-details">null</code></pre>
           </div>
         </div>
