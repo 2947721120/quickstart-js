@@ -22,17 +22,16 @@
 ------------
 
 - [Read more about Firebase Auth](https://firebase.google.com/docs/auth/)
-
 入门
----------------
 
-- 设置你的计划 [Firebase Console](https://console.firebase.google.com).
-- 启用要在验证部分>登录方法选项卡中使用的身份验证方法 - 你不需要启用自定义身份验证。
--在里面 [Google Developer Console](https://console.developers.google.com), 访问您在火力地堡控制台创建的项目。
-- 对于自定义验证，也是在你的项目创建一个新的服务帐户 [Developers Console](https://console.developers.google.com/apis/credentials/serviceaccountkey?project=_), 并下载JSON表示。
-- 对于Facebook，Twitter和GitHub上，您将需要在他们的开发者平台，白名单创建一个应用程序作为一个开发者 `https://<project_id>.firebaseapp.com/__/auth/handler`面向auth重定向和在火力地堡控制台启用和设置应用程序的凭据>验证>在方法的迹象。
-- 编辑 `.html`为验证方法你想尝试，并从火力地堡复制的初始化代码段 Console **Overview > Add Firebase to your web app** into the `<head>`第 `.html`.
-- 运行 `firebase serve`使用火力地堡CLI工具来启动一个本地服务器，并打开在网络浏览器的样品`.html`
+设置您的火力地堡控制台项目 [Firebase Console](https://console.firebase.google.com).。
+启用要在验证部分>登录方法选项卡中使用的身份验证方法 - 你不需要启用自定义身份验证。
+在谷歌开发者控制台中，访问您在火力地堡控制台创建的项目[Google Developer Console](https://console.developers.google.com),。
+对于自定义验证，也创造了在项目开发者控制台一个新的服务帐户，并下载JSON表示 [Developers Console](https://console.developers.google.com/apis/credentials/serviceaccountkey?project=_),。
+对于Facebook，Twitter和GitHub上，你需要创建一个应用程序作为其开发者平台上的开发者，白名单的https：// <PROJECT_ID> .firebaseapp.com / __ / auth /中处理程序AUTH重定向和启用和设置应用程序的凭据在火力地堡控制台>验证>在方法的迹象。
+编辑你想尝试，并从火力地堡控制台概述复制初始化片段>添加火力地堡到您的网络应用程序转换的.html的<head>部分的验证方法的.html。
+运行火力使用火力地堡CLI工具来启动本地服务器，并在Web浏览器中打开示例的.html服务。
+
 支持
 -------
 
