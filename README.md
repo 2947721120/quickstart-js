@@ -12,6 +12,8 @@
 github已配置好
 [github弹窗登陆](http://2947721120.github.io/quickstart-js/auth/github-popup.html)
 [github重定向登陆](http://2947721120.github.io/quickstart-js/auth/github-redirect.html)
+[github数据演示](http://2947721120.github.io/quickstart-js/database/)
+[图片储存演示](http://2947721120.github.io/quickstart-js/storage/)
 ##EN
 # Firebase Quickstarts for Javascript
 
